@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/contacts/new" method="post">
+            <fieldset>
+                <legend>Contact Values</legend>
+                <p>
+                    <label for="email">Email</label>
+                        <input name="email" id="email" type="email" placeholder="Email"
+                            value="{{.Contact.Email}}">
+                            <span class="error">
+                                {{.Errors.email}}
+                            </span>
+                </p>
+                <p>
+                    <label for="first">First Name</label>
+                    <input name="first" id="first" type="text" placeholder="First Name"
+                        value="{{.Contact.First}}">
+                    <span class="error">{{.Errors.first}}</span>
+                </p>
+                <p>
+                    <label for="last">Last Name</label>
+                    <input name="last" id="last" type="text" placeholder="Last Name"
+                        value="{{.Contact.Last}}">
+                    <span class="error">{{.Errors.last}}</span>
+                </p>
+                <p>
+                    <label for="phone">Phone</label>
+                    <input name="phone" id="phone" type="text" placeholder="Phone" value="{{.Contact.Phone}}">
+                    <span class="error">{{.Errors.phone}}</span>
+                </p>
+                <button>Save</button>
+            </fieldset>
+    </form>
+
+    <p>
+        <a href="/contacts">Back</a>
+    </p>
+</body>
+
+</html>
